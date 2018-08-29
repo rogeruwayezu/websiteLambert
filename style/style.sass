@@ -1,0 +1,396 @@
+@import /home/roger/Desktop/moringaChallenge/1-tools/bourbon/bourbon
+@import /home/roger/Desktop/portfolio/1-tools/animations/animations.scss
+@import /home/roger/Desktop/portfolio/1-tools/animations/bounceOut.scss
+  
+$bgcolor: #e5eaee
+$accent-light: #e1c184
+$accent: #c99065
+$documentBackgroundColor: #fff
+
+// Placeholders
+
+%background-image
+  background:
+    repeat: no-repeat, no-repeat
+    size: 40px, 20px, cover
+  
+  
+body 
+  background-color: #eee
+  font-family: 'PT Sans', sans-serif
+  margin: 0px 0px 0px 0px
+  padding: 0px 0px 0px 0px
+// Header section style
+
+header 
+  @extend %background-image
+  background: 
+    position: 50% 30%, 50% 90%, 70% 50%
+    image: url(https://res.cloudinary.com/dgdnxieva/image/upload/v1534762811/moringa/logo.png), url(https://res.cloudinary.com/dgdnxieva/image/upload/v1534762743/moringa/mouse_click.png), url(https://res.cloudinary.com/dgdnxieva/image/upload/v1534762794/moringa/h_img.jpg)
+  padding-bottom: 182px  
+  
+  nav 
+    float: right
+    padding: 30px 30px 0 0
+
+    a 
+      display: inline-block
+      margin-left: 30px
+      color: rgba(255, 255, 255, 0.9)
+      text-decoration: none
+      font-size: 14px
+      font-weight: 700
+      text-transform: uppercase
+
+  h1 
+      text-align: center
+      font-size: 35px
+      font-weight: 500
+      color: white
+      text-transform: uppercase
+      letter-spacing: 0.05em
+      clear: both
+      padding-top: 200px
+
+      span 
+        display: inline-block
+        margin-bottom: 15px
+
+  .kicker 
+    text-align: center
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: 0.05em
+    color: white
+    line-height: 1
+    margin-top: -5%
+
+.bouncer 
+  position: absolute
+  width: 50px
+  height: 50px
+ 
+  
+@media (max-width: 211px)
+  .kicker
+    margin-bottom: 60px
+
+@media (max-width: 1058px)
+  header
+    background:
+      position: 50% 10%, 50% 90%, 50% 50%
+        
+    nav 
+      float: none
+      text-align: center 
+      padding-top: 90px
+        
+    h1
+      padding-top: 0px
+    
+   
+
+
+
+// About Us Section 
+
+.about-section
+  text-align: center
+  padding-bottom: 40px
+
+  h1
+    text-transform: uppercase
+    padding-top: 50px
+    padding-bottom: 3px
+
+    
+
+
+// Services Section 
+
+.services-section
+  background:
+    image: url(https://res.cloudinary.com/dgdnxieva/image/upload/v1534762794/moringa/s_image.jpg)
+    size: cover
+  padding-bottom: 100px
+ 
+  color: white 
+
+  h2
+    padding-top: 70px
+    padding-bottom: 40px
+    margin-left: 45%
+
+  .services-content
+    max-width: 550px
+    margin-left: 30%
+    text-align: center
+
+@media screen and (max-width: 1058px)
+  .services-section
+    background:
+      position: 50% 50%
+    .services-content
+      margin: 0px auto
+      text-align: center
+
+  
+
+
+// Work Section 
+
+.work-section
+  max-width: 95%
+  padding-top: 70px
+  margin: 0px 3% 0px 3%
+  h2 
+    text-align: center 
+ 
+
+  .work-content 
+    display: flex
+    flex-wrap: wrap
+    +align-items(flex-end)
+  
+
+  .work-unit
+    flex: 30%
+    text-align: center
+
+@media screen and (max-width: 1200px) 
+  .work-unit 
+    flex: 50%
+  
+@media screen and (max-width: 600px) 
+  .work-content 
+    flex-direction: column
+
+
+
+// portfolio Section 
+
+.alt-section
+  h2 
+    text-align: center
+    padding-top: 5%
+    padding-bottom: 2%
+
+.section-portfolio
+  overflow-x: hidden
+
+.portfolio-belt
+  width: 200%
+  position: relative
+  left: 0%
+  +transition(all 800ms)
+
+.thumb-wrap, .portfolio-wrap
+  width: 50%
+  float: left
+
+.thumb-container
+  max-width: 960px
+  margin: 0px auto
+  padding-bottom: 100px
+  +clearfix 
+
+  .thumb-unit
+    display: block
+    margin: 15px 10px 15px 0px
+    width: 23.5%
+    float: left
+    position: relative
+    padding-top: 16%
+    cursor: pointer
+    background: 
+      position: center center 
+      repeat: no-repeat
+      size: cover
+
+    +perspective(300)
+
+    @media screen and (max-width: 760px)
+      width: 40%
+      padding-top: 26%
+      margin-left: 6%
+
+      
+
+    .thumb-overlay
+      +position(absolute, 0% 0px null 0px)
+      height: 100%
+      background: fade-out($accent, 0.1)
+      +display(flex)
+      +align-items(center)
+      +justify-content(space-around) 
+      +transform(matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1))
+      opacity: 0
+      +transition(opacity, 300ms, ease-in, 500ms)
+
+      strong
+        display: block
+        padding: 0px 20px
+        color: white
+        font:
+            weight: 300
+            size: 24px
+        text-transform: uppercase
+        line-height: 1.2
+
+    &:hover 
+      z-index: 2
+
+      .thumb-overlay
+        @extend %animation
+        opacity: 1
+
+.portfolio-container
+  max-width: 600px
+  margin: 0px auto
+  position: relative
+  display: none 
+
+  h4 
+    color: $accent
+    font-weight: 300
+    text-transform: uppercase
+    font-size: 24px
+    line-height: 1.2
+    margin: 0 0 20px
+
+  img 
+    max-width: 100% 
+    margin-bottom: 20px
+
+  .portfolio-return
+    +size(40px)
+    cursor: pointer
+    opacity: 0.5
+    +position(absolute, -5px null null -60px)
+
+    path
+      fill: rgba(0,0,0,0.4)
+
+    &:hover
+      opacity: 1 
+
+
+@media screen and (max-width: 740px)
+  .portfolio-container
+    .portfolio-return
+      left: 0px
+    h2
+      margin-left: 60px
+
+@media screen and (max-width: 541px)
+  .work-content
+    width: 220px
+
+    .thumb-unit
+      width: 200px
+    
+
+
+
+// Form-section
+.section-contact
+  background:
+    image: url(https://res.cloudinary.com/dgdnxieva/image/upload/v1534762792/moringa/c_image.jpg)
+    size: cover 
+  
+  h2
+    color: white
+    text-align: center
+    text-transform: uppercase
+    padding-top: 50px
+    padding-bottom: 20px
+form 
+  max-width: 600px
+  margin: 0 auto 50px
+  
+  
+  input, textarea
+    border: 3px solid white 
+    width: 100%
+    +box-sizing(border-box)
+    padding: 10px
+    background-color: transparent
+    
+
+    &:focus
+      outline: none 
+      border-color: $accent-light
+
+  textarea
+    height: 12em
+    margin-bottom: 50px
+
+    .submit-wrap
+      text-align: right
+
+  [type="submit"]
+    background: $accent
+    color: white
+    font-size: 18px
+    text-transform: uppercase
+    width: 33%
+
+
+    &:hover
+      background: $accent-light
+
+  .contact-info-group
+
+    label
+      width: 50%
+      float: left
+      +box-sizing(border-box)
+
+      &:nth-child(1)
+        padding-right: 10px
+      
+      &:nth-child(2)
+        padding-left: 10px
+
+  label
+    display: block
+    margin-bottom: 20px
+
+
+  ::placeholder /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white
+    opacity: 1 
+
+// Social media Links
+
+footer 
+  margin-bottom: 20px
+  .copyright
+    text-align: center 
+    text-transform: uppercase
+  
+  .client-title
+    font-style: normal
+    font-size: 16px
+    margin-left: 600px 
+
+.icons-wrap 
+  max-width: 700px
+  margin: 0px auto 50px
+  +display(flex)
+  +justify-content(space-around)
+  +flex-wrap(wrap) 
+
+  a
+    display: block 
+    +size(50px)
+    line-height: 50px
+    +transition()
+
+    &:hover
+      +transform(scale(1.2))
+
+  [class^="icon-"]
+    +size(40px)
+    padding-right: 20px
+    justify-content: space-around
