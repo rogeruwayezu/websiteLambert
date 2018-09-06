@@ -12,7 +12,7 @@ $documentBackgroundColor: #fff
 %background-image
   background:
     repeat: no-repeat, no-repeat
-    size: 40px, 20px, cover
+    size: 40px, cover
   
   
 body 
@@ -22,73 +22,80 @@ body
   padding: 0px 0px 0px 0px
 // Header section style
 
-header 
-  @extend %background-image
-  background: 
-    position: 50% 30%, 50% 90%, 70% 50%
-    image: url(https://res.cloudinary.com/dgdnxieva/image/upload/v1534762811/moringa/logo.png), url(https://res.cloudinary.com/dgdnxieva/image/upload/v1534762743/moringa/mouse_click.png), url(https://res.cloudinary.com/dgdnxieva/image/upload/v1534762794/moringa/h_img.jpg)
-  padding-bottom: 182px  
   
-  nav 
-    float: right
-    padding: 30px 30px 0 0
 
-    a 
-      display: inline-block
-      margin-left: 30px
-      color: rgba(255, 255, 255, 0.9)
-      text-decoration: none
-      font-size: 14px
-      font-weight: 700
-      text-transform: uppercase
+//   nav 
+//     float: right
+//     padding: 30px 30px 0 0
 
-  h1 
-      text-align: center
-      font-size: 35px
-      font-weight: 500
-      color: white
-      text-transform: uppercase
-      letter-spacing: 0.05em
-      clear: both
-      padding-top: 200px
+//     a 
+//       display: inline-block
+//       margin-left: 30px
+//       color: rgba(255, 255, 255, 0.9)
+//       text-decoration: none
+//       font-size: 14px
+//       font-weight: 700
+//       text-transform: uppercase
 
-      span 
-        display: inline-block
-        margin-bottom: 15px
+//   h1 
+//       text-align: center
+//       font-size: 35px
+//       font-weight: 500
+//       color: white
+//       text-transform: uppercase
+//       letter-spacing: 0.05em
+//       clear: both
+//       padding-top: 200px
 
-  .kicker 
-    text-align: center
-    font-weight: 700
-    text-transform: uppercase
-    letter-spacing: 0.05em
-    color: white
-    line-height: 1
-    margin-top: -5%
+//       span 
+//         display: inline-block
+//         margin-bottom: 15px
 
-.bouncer 
-  position: absolute
-  width: 50px
-  height: 50px
- 
+//   .kicker 
+//     text-align: center
+//     font-weight: 700
+//     text-transform: uppercase
+//     letter-spacing: 0.05em
+//     color: white
+//     line-height: 1
+//     margin-top: -5%
+
+// .bouncer 
+//   position: absolute
+//   top: 90%
+
+// .kicker-scroll
+//   text-align: center
+//   p 
+//     position: absolute
+//     top: 85%
+//     left: 46%
+
   
-@media (max-width: 211px)
-  .kicker
-    margin-bottom: 60px
+// @media (max-width: 211px)
+//   .kicker
+//     margin-bottom: 60px
 
-@media (max-width: 1058px)
-  header
-    background:
-      position: 50% 10%, 50% 90%, 50% 50%
+// @media (max-width: 1058px)
+//   header
+//     background:
+//       position: 50% 10%, 50% 90%, 50% 50%
         
-    nav 
-      float: none
-      text-align: center 
-      padding-top: 90px
+//     nav 
+//       float: none
+//       text-align: center 
+//       padding-top: 90px
         
-    h1
-      padding-top: 0px
+//     h1
+//       padding-top: 0px
     
    
+
+
+.carousel-inner img 
+  width: 100%
+  height: 450px
+  
 
 
 

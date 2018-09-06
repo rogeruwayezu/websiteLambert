@@ -6,10 +6,10 @@ $(function() {
 
 
 function loop() {
-    $('.bouncer').animate({'top': '500'}, {
+    $('.bouncer').animate({'top': '600'}, {
         duration: 1000, 
         complete: function() {
-            $('.bouncer').animate({top: 400}, {
+            $('.bouncer').animate({top: 590}, {
                 duration: 1000, 
                 complete: loop});
         }}); 
