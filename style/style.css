@@ -323,19 +323,35 @@
     -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
 body {
-  background-color: #eee;
+  background-color: #fff;
   font-family: "PT Sans", sans-serif;
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px; }
 
-.carousel-inner img {
-  width: 100%;
-  height: 450px; }
+header {
+  position: relative; }
+  header nav {
+    position: absolute;
+    float: right;
+    padding: 30px 30px 0 0;
+    z-index: 2;
+    right: 50px; }
+    header nav a {
+      display: inline-block;
+      margin-left: 30px;
+      color: black;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase; }
+  header .carousel-inner img {
+    width: 100%;
+    height: 450px; }
 
 .about-section {
   text-align: center;
   padding-bottom: 40px; }
-  .about-section h1 {
+  .about-section h2 {
     text-transform: uppercase;
     padding-top: 50px;
     padding-bottom: 3px; }
@@ -344,59 +360,28 @@ body {
   background-image: url(https://res.cloudinary.com/dgdnxieva/image/upload/v1534762794/moringa/s_image.jpg);
   background-size: cover;
   padding-bottom: 100px;
+  box-shadow: inset 0 0 0 1000px rgba(64, 64, 64, 0.8);
   color: white; }
   .services-section h2 {
     padding-top: 70px;
     padding-bottom: 40px;
     margin-left: 45%; }
-  .services-section .services-content {
-    max-width: 550px;
-    margin-left: 30%;
-    text-align: center; }
 
 @media screen and (max-width: 1058px) {
   .services-section {
-    background-position: 50% 50%; }
-    .services-section .services-content {
-      margin: 0px auto;
-      text-align: center; } }
-.work-section {
-  max-width: 95%;
-  padding-top: 70px;
-  margin: 0px 3% 0px 3%; }
-  .work-section h2 {
-    text-align: center; }
-  .work-section .work-content {
-    display: flex;
-    flex-wrap: wrap;
-    -webkit-box-align: end;
-    -moz-box-align: end;
-    box-align: end;
-    -webkit-align-items: flex-end;
-    -moz-align-items: flex-end;
-    -ms-align-items: flex-end;
-    -o-align-items: flex-end;
-    align-items: flex-end;
-    -ms-flex-align: end; }
-  .work-section .work-unit {
-    flex: 30%;
-    text-align: center; }
+    background-position: 50% 50%; } }
+.alt-section {
+  background: #e5eaee; }
+  .alt-section h2 {
+    padding-top: 70px;
+    padding-bottom: 40px;
+    margin-left: 45%;
+    color: white; }
 
-@media screen and (max-width: 1200px) {
-  .work-unit {
-    flex: 50%; } }
-@media screen and (max-width: 600px) {
-  .work-content {
-    flex-direction: column; } }
-.alt-section h2 {
-  text-align: center;
-  padding-top: 5%;
-  padding-bottom: 2%; }
-
-.section-portfolio {
+.section-work {
   overflow-x: hidden; }
 
-.portfolio-belt {
+.work-belt {
   width: 200%;
   position: relative;
   left: 0%;
@@ -404,7 +389,7 @@ body {
   -moz-transition: all 800ms;
   transition: all 800ms; }
 
-.thumb-wrap, .portfolio-wrap {
+.thumb-wrap, .work-wrap {
   width: 50%;
   float: left; }
 
@@ -418,8 +403,7 @@ body {
     display: table; }
   .thumb-container .thumb-unit {
     display: block;
-    margin: 15px 10px 15px 0px;
-    width: 23.5%;
+    width: 25%;
     float: left;
     position: relative;
     padding-top: 16%;
@@ -432,9 +416,8 @@ body {
     perspective: 300; }
     @media screen and (max-width: 760px) {
       .thumb-container .thumb-unit {
-        width: 40%;
-        padding-top: 26%;
-        margin-left: 6%; } }
+        width: 50%;
+        padding-top: 26%; } }
     .thumb-container .thumb-unit .thumb-overlay {
       position: absolute;
       top: 0%;
@@ -489,22 +472,22 @@ body {
       .thumb-container .thumb-unit:hover .thumb-overlay {
         opacity: 1; }
 
-.portfolio-container {
+.work-container {
   max-width: 600px;
   margin: 0px auto;
   position: relative;
   display: none; }
-  .portfolio-container h4 {
+  .work-container h3 {
     color: #c99065;
     font-weight: 300;
     text-transform: uppercase;
     font-size: 24px;
     line-height: 1.2;
     margin: 0 0 20px; }
-  .portfolio-container img {
+  .work-container img {
     max-width: 100%;
     margin-bottom: 20px; }
-  .portfolio-container .portfolio-return {
+  .work-container .work-return {
     height: 40px;
     width: 40px;
     cursor: pointer;
@@ -512,21 +495,21 @@ body {
     position: absolute;
     top: -5px;
     left: -60px; }
-    .portfolio-container .portfolio-return path {
+    .work-container .work-return path {
       fill: rgba(0, 0, 0, 0.4); }
-    .portfolio-container .portfolio-return:hover {
+    .work-container .work-return:hover {
       opacity: 1; }
 
 @media screen and (max-width: 740px) {
-  .portfolio-container .portfolio-return {
+  .work-container .work-return {
     left: 0px; }
-  .portfolio-container h2 {
+  .work-container h4 {
     margin-left: 60px; } }
 @media screen and (max-width: 541px) {
-  .work-content {
+  .skill-lockup {
     width: 220px; }
-    .work-content .thumb-unit {
-      width: 200px; } }
+    .skill-lockup .skill-unit {
+      width: 220px; } }
 .section-contact {
   background-image: url(https://res.cloudinary.com/dgdnxieva/image/upload/v1534762792/moringa/c_image.jpg);
   background-size: cover; }
@@ -636,5 +619,8 @@ footer {
     width: 40px;
     padding-right: 20px;
     justify-content: space-around; }
+
+footer {
+  background-color: black; }
 
 /*# sourceMappingURL=style.css.map */

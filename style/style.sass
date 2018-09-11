@@ -1,6 +1,6 @@
-@import /home/roger/Desktop/moringaChallenge/1-tools/bourbon/bourbon
-@import /home/roger/Desktop/portfolio/1-tools/animations/animations.scss
-@import /home/roger/Desktop/portfolio/1-tools/animations/bounceOut.scss
+@import /home/roger/Desktop/websiteLambert/1-tools/bourbon/bourbon
+@import /home/roger/Desktop/websiteLambert/1-tools/animations/animations.scss
+@import /home/roger/Desktop/websiteLambert/1-tools/animations/bounceOut.scss
   
 $bgcolor: #e5eaee
 $accent-light: #e1c184
@@ -16,85 +16,36 @@ $documentBackgroundColor: #fff
   
   
 body 
-  background-color: #eee
+  background-color: #fff
   font-family: 'PT Sans', sans-serif
   margin: 0px 0px 0px 0px
   padding: 0px 0px 0px 0px
+
+
 // Header section style
 
-  
+header
+  position: relative
+  nav 
+    position: absolute
+    float: right
+    padding: 30px 30px 0 0
+    z-index: 2
+    right: 50px
+    a 
+     
+      display: inline-block
+      margin-left: 30px
+      color: black
+      text-decoration: none
+      font-size: 14px
+      font-weight: 700
+      text-transform: uppercase
+      
 
-//   nav 
-//     float: right
-//     padding: 30px 30px 0 0
-
-//     a 
-//       display: inline-block
-//       margin-left: 30px
-//       color: rgba(255, 255, 255, 0.9)
-//       text-decoration: none
-//       font-size: 14px
-//       font-weight: 700
-//       text-transform: uppercase
-
-//   h1 
-//       text-align: center
-//       font-size: 35px
-//       font-weight: 500
-//       color: white
-//       text-transform: uppercase
-//       letter-spacing: 0.05em
-//       clear: both
-//       padding-top: 200px
-
-//       span 
-//         display: inline-block
-//         margin-bottom: 15px
-
-//   .kicker 
-//     text-align: center
-//     font-weight: 700
-//     text-transform: uppercase
-//     letter-spacing: 0.05em
-//     color: white
-//     line-height: 1
-//     margin-top: -5%
-
-// .bouncer 
-//   position: absolute
-//   top: 90%
-
-// .kicker-scroll
-//   text-align: center
-//   p 
-//     position: absolute
-//     top: 85%
-//     left: 46%
-
-  
-// @media (max-width: 211px)
-//   .kicker
-//     margin-bottom: 60px
-
-// @media (max-width: 1058px)
-//   header
-//     background:
-//       position: 50% 10%, 50% 90%, 50% 50%
-        
-//     nav 
-//       float: none
-//       text-align: center 
-//       padding-top: 90px
-        
-//     h1
-//       padding-top: 0px
-    
-   
-
-
-.carousel-inner img 
-  width: 100%
-  height: 450px
+  .carousel-inner img 
+    width: 100%
+    height: 450px
   
 
 
@@ -105,10 +56,11 @@ body
   text-align: center
   padding-bottom: 40px
 
-  h1
+  h2
     text-transform: uppercase
     padding-top: 50px
     padding-bottom: 3px
+    
 
     
 
@@ -120,7 +72,8 @@ body
     image: url(https://res.cloudinary.com/dgdnxieva/image/upload/v1534762794/moringa/s_image.jpg)
     size: cover
   padding-bottom: 100px
- 
+  box-shadow: inset 0 0 0 1000px rgba(64, 64, 64, 0.8)
+
   color: white 
 
   h2
@@ -128,70 +81,35 @@ body
     padding-bottom: 40px
     margin-left: 45%
 
-  .services-content
-    max-width: 550px
-    margin-left: 30%
-    text-align: center
+  
 
 @media screen and (max-width: 1058px)
   .services-section
     background:
       position: 50% 50%
-    .services-content
-      margin: 0px auto
-      text-align: center
-
+   
   
-
-
-// Work Section 
-
-.work-section
-  max-width: 95%
-  padding-top: 70px
-  margin: 0px 3% 0px 3%
-  h2 
-    text-align: center 
- 
-
-  .work-content 
-    display: flex
-    flex-wrap: wrap
-    +align-items(flex-end)
-  
-
-  .work-unit
-    flex: 30%
-    text-align: center
-
-@media screen and (max-width: 1200px) 
-  .work-unit 
-    flex: 50%
-  
-@media screen and (max-width: 600px) 
-  .work-content 
-    flex-direction: column
-
-
-
-// portfolio Section 
+// Work Section
 
 .alt-section
-  h2 
-    text-align: center
-    padding-top: 5%
-    padding-bottom: 2%
+  background: $bgcolor
 
-.section-portfolio
+  h2
+    padding-top: 70px
+    padding-bottom: 40px
+    margin-left: 45%
+    color: white
+
+.section-work
   overflow-x: hidden
 
-.portfolio-belt
+.work-belt
   width: 200%
   position: relative
   left: 0%
   +transition(all 800ms)
 
-.thumb-wrap, .portfolio-wrap
+.thumb-wrap, .work-wrap
   width: 50%
   float: left
 
@@ -203,8 +121,7 @@ body
 
   .thumb-unit
     display: block
-    margin: 15px 10px 15px 0px
-    width: 23.5%
+    width: 25%
     float: left
     position: relative
     padding-top: 16%
@@ -217,11 +134,8 @@ body
     +perspective(300)
 
     @media screen and (max-width: 760px)
-      width: 40%
+      width: 50%
       padding-top: 26%
-      margin-left: 6%
-
-      
 
     .thumb-overlay
       +position(absolute, 0% 0px null 0px)
@@ -234,13 +148,14 @@ body
       opacity: 0
       +transition(opacity, 300ms, ease-in, 500ms)
 
+
       strong
         display: block
         padding: 0px 20px
         color: white
         font:
-            weight: 300
-            size: 24px
+          weight: 300
+          size: 24px
         text-transform: uppercase
         line-height: 1.2
 
@@ -251,13 +166,13 @@ body
         @extend %animation
         opacity: 1
 
-.portfolio-container
+.work-container
   max-width: 600px
   margin: 0px auto
   position: relative
   display: none 
 
-  h4 
+  h3 
     color: $accent
     font-weight: 300
     text-transform: uppercase
@@ -269,7 +184,7 @@ body
     max-width: 100% 
     margin-bottom: 20px
 
-  .portfolio-return
+  .work-return
     +size(40px)
     cursor: pointer
     opacity: 0.5
@@ -281,21 +196,21 @@ body
     &:hover
       opacity: 1 
 
-
 @media screen and (max-width: 740px)
-  .portfolio-container
-    .portfolio-return
+  .work-container
+        
+    .work-return
       left: 0px
-    h2
+
+    h4
       margin-left: 60px
 
 @media screen and (max-width: 541px)
-  .work-content
+  .skill-lockup
     width: 220px
 
-    .thumb-unit
-      width: 200px
-    
+    .skill-unit
+      width: 220px
 
 
 
@@ -401,3 +316,10 @@ footer
     +size(40px)
     padding-right: 20px
     justify-content: space-around
+
+
+
+// Footer styles 
+
+footer 
+  background-color: black
